@@ -10,6 +10,21 @@ This repo contains source code and pre-processed corpora for Dynamic Programming
 * pytorch1.1
 * cuda 10.0
 
+## Usage
+```shell
+git clone https://github.com/pytorch/fairseq.git
+git clone https://github.com/xlhex/dpe.git
+
+# change to 58b912f branch
+cd fairseq
+git checkout 58b912f
+
+# copy files from dpe to fairseq
+cp -r ../dpe/fairseq ./ # please overwrite all conflicted files
+cp ../dpe/*py ./
+cp ../dpe/*sh ./
+```
+
 ## Training
 To train a DPE segmenter
 ```shell
