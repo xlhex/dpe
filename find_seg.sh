@@ -7,7 +7,6 @@ subset=$4
 
 DATA=PATH/TO/DATA/$SRC-$TGT/
 MPATH=checkpoints/bpe_dropout_post/$SRC-$TGT/seed$seed
-#MPATH=checkpoints/pretrain/$SRC-$TGT/big/seed$seed
 CKPT=$MPATH/checkpoint_best.pt
 TASK=translation
 BATCH=35
