@@ -10,6 +10,22 @@ This repo contains source code and pre-processed corpora for Dynamic Programming
 * pytorch1.1
 * [sentencepiece](https://github.com/google/sentencepiece)
 * cuda 10.0
+
+## Usage
+```shell
+git clone https://github.com/pytorch/fairseq.git
+git clone https://github.com/xlhex/dpe.git
+
+# change to 58b912f branch
+cd fairseq
+git checkout 58b912f
+
+# copy files from dpe to fairseq
+cp -r ../dpe/fairseq ./ # please overwrite all conflicted files
+cp ../dpe/*py ./
+cp ../dpe/*sh ./
+```
+
  
 ## Data Preparation
 * Using any tokenizer (we use [MOSES toolkit](https://github.com/moses-smt/mosesdecoder)) to tokenize your corpus 
@@ -19,7 +35,7 @@ This repo contains source code and pre-processed corpora for Dynamic Programming
 * Keep your dataset in plain text format: {train/valid/test}.src-tgt.{src/tgt}, where src and tgt are your source and target language pairs respectively
 
 ## Training
-To train a DPE segmenter
+Before start segmenting your corpus, we need to train a DPE segmenter
 ```shell
 # SRC: source language
 # TGT: target language
@@ -49,3 +65,24 @@ Once your corpus is segmented, you can use your favourite MT toolkit to train a 
 * [en-de (WMT14)](https://drive.google.com/file/d/1BxaHJGkJ4vRFuhPno3DMtcVWBI4aC8bh/view?usp=sharing)
 * [en-fi (WMT15)](https://drive.google.com/file/d/1J7uX5TQ2ivMowLWFmZrYrtJ47DeEWG2Q/view?usp=sharing)
 * [en-et (WMT18)](https://drive.google.com/file/d/1Z9azC-FGJABmxTo29P46BhwNsCbaRu9P/view?usp=sharing)
+
+## Citation
+
+Please cite as:
+
+```bibtex
+@inproceedings{he2020-dynamic,
+    title = "Dynamic Programming Encoding for Subword Segmentation in Neural Machine Translation",
+    author = "He, Xuanli  and
+      Haffari, Gholamreza  and
+      Norouzi, Mohammad",
+    booktitle = "Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics",
+    month = jul,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://www.aclweb.org/anthology/2020.acl-main.275",
+    doi = "10.18653/v1/2020.acl-main.275",
+    pages = "3042--3051",
+}
+```
